@@ -1,0 +1,13 @@
+tmp/
+sources/*.local.pdf
+sources/*.local.txt
+.env
+.env.*
+!.env.example
+__pycache__/
+.venv/
+node_modules/
+*.log
+*.tmp
+data/private/
+reports/cleanse-raw.local.txt

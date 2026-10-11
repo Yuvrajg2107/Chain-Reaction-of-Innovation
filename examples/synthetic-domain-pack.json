@@ -1,0 +1,234 @@
+{
+  "id": "synthetic-thermal-fixture",
+  "version": "0.1.0",
+  "status": "synthetic_fixture",
+  "entities": [
+    {
+      "id": "lamp",
+      "label": "Illustrative lamp",
+      "layer": "product"
+    },
+    {
+      "id": "thermal",
+      "label": "Illustrative thermal path",
+      "layer": "subsystem"
+    },
+    {
+      "id": "interface",
+      "label": "Illustrative interface layer",
+      "layer": "component"
+    },
+    {
+      "id": "material",
+      "label": "Synthetic material",
+      "layer": "material"
+    },
+    {
+      "id": "conduction",
+      "label": "Steady conduction principle",
+      "layer": "principle"
+    },
+    {
+      "id": "eq",
+      "label": "Illustrative layer thermal model",
+      "layer": "model"
+    }
+  ],
+  "parameters": [
+    {
+      "id": "L",
+      "entity_id": "interface",
+      "quantity_kind": "length",
+      "unit": "m"
+    },
+    {
+      "id": "A",
+      "entity_id": "interface",
+      "quantity_kind": "area",
+      "unit": "m^2"
+    },
+    {
+      "id": "k",
+      "entity_id": "material",
+      "quantity_kind": "thermal_conductivity",
+      "unit": "W/(m*K)"
+    },
+    {
+      "id": "Q",
+      "entity_id": "thermal",
+      "quantity_kind": "heat_flow",
+      "unit": "W"
+    },
+    {
+      "id": "dT",
+      "entity_id": "interface",
+      "quantity_kind": "temperature_difference",
+      "unit": "K"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "synthetic",
+      "title": "Invented planning fixture; no scientific validation",
+      "source_type": "synthetic",
+      "locator": "docs/reasoning-spec.md illustrative calculation",
+      "review": "unreviewed",
+      "reuse": "Project-authored synthetic fixture"
+    }
+  ],
+  "relations": [
+    {
+      "id": "r1",
+      "source_id": "interface",
+      "target_id": "thermal",
+      "category": "structural",
+      "predicate": "part_of",
+      "origin": "manual",
+      "review": "unreviewed",
+      "evidence_ids": [
+        "synthetic"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "model-1",
+      "entity_id": "eq",
+      "registry_key": "illustrative_conduction_drop_v1",
+      "input_slots": [
+        "L",
+        "A",
+        "k",
+        "Q"
+      ],
+      "output_slots": [
+        "dT"
+      ],
+      "assumptions": [
+        "steady_state",
+        "one_dimensional",
+        "constant_k"
+      ],
+      "evidence_ids": [
+        "synthetic"
+      ],
+      "review": "unreviewed"
+    }
+  ],
+  "applications": [
+    {
+      "id": "app-1",
+      "model_id": "model-1",
+      "configuration_id": "synthetic-config-1",
+      "inputs": {
+        "L": "L",
+        "A": "A",
+        "k": "k",
+        "Q": "Q"
+      },
+      "outputs": {
+        "dT": "dT"
+      },
+      "required_conditions": [
+        "steady_state",
+        "one_dimensional",
+        "constant_k"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "forward-unreviewed",
+      "configuration_id": "synthetic-config-1",
+      "direction": "forward",
+      "values": {
+        "L": {
+          "value": 0.001,
+          "unit": "m",
+          "origin": "synthetic"
+        },
+        "A": {
+          "value": 0.001,
+          "unit": "m^2",
+          "origin": "synthetic"
+        },
+        "k": {
+          "value": 1,
+          "unit": "W/(m*K)",
+          "origin": "synthetic"
+        },
+        "Q": {
+          "value": 2,
+          "unit": "W",
+          "origin": "synthetic"
+        }
+      },
+      "conditions": {
+        "steady_state": true,
+        "one_dimensional": true,
+        "constant_k": true
+      },
+      "expected_state": "unresolved"
+    },
+    {
+      "id": "missing-k",
+      "configuration_id": "synthetic-config-1",
+      "direction": "forward",
+      "values": {
+        "L": {
+          "value": 0.001,
+          "unit": "m",
+          "origin": "synthetic"
+        },
+        "A": {
+          "value": 0.001,
+          "unit": "m^2",
+          "origin": "synthetic"
+        },
+        "Q": {
+          "value": 2,
+          "unit": "W",
+          "origin": "synthetic"
+        }
+      },
+      "conditions": {
+        "steady_state": null
+      },
+      "expected_state": "unresolved"
+    },
+    {
+      "id": "backward-unreviewed",
+      "configuration_id": "synthetic-config-1",
+      "direction": "backward",
+      "values": {
+        "L": {
+          "value": 0.001,
+          "unit": "m",
+          "origin": "synthetic"
+        },
+        "A": {
+          "value": 0.001,
+          "unit": "m^2",
+          "origin": "synthetic"
+        },
+        "Q": {
+          "value": 2,
+          "unit": "W",
+          "origin": "synthetic"
+        }
+      },
+      "conditions": {
+        "steady_state": true,
+        "one_dimensional": true,
+        "constant_k": true
+      },
+      "target": {
+        "parameter_id": "dT",
+        "operator": "<=",
+        "value": 1,
+        "unit": "K"
+      },
+      "expected_state": "unresolved"
+    }
+  ]
+}

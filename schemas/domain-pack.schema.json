@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/chainreaction/domain-pack-0.1.schema.json",
+  "title": "ChainReaction proposed domain pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "version", "status", "entities", "parameters", "evidence", "relations", "models", "applications", "scenarios"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum": ["synthetic_fixture", "draft", "reviewed"]},
+    "entities": {"type": "array", "items": {"$ref": "#/$defs/entity"}},
+    "parameters": {"type": "array", "items": {"$ref": "#/$defs/parameter"}},
+    "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+    "relations": {"type": "array", "items": {"$ref": "#/$defs/relation"}},
+    "models": {"type": "array", "items": {"$ref": "#/$defs/model"}},
+    "applications": {"type": "array", "items": {"$ref": "#/$defs/application"}},
+    "scenarios": {"type": "array", "items": {"$ref": "#/$defs/scenario"}}
+  },
+  "$defs": {
+    "ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "entity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "layer"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "label": {"type": "string", "minLength": 1},
+        "layer": {"enum": ["product", "subsystem", "component", "material", "principle", "model"]}
+      }
+    },
+    "parameter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "entity_id", "quantity_kind", "unit"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "entity_id": {"type": "string", "minLength": 1},
+        "quantity_kind": {"type": "string", "minLength": 1},
+        "unit": {"type": "string", "minLength": 1},
+        "minimum": {"type": "number"},
+        "maximum": {"type": "number"}
+      }
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "title", "source_type", "locator", "review", "reuse"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "source_type": {"enum": ["paper", "patent", "specification", "measurement", "manual", "synthetic"]},
+        "url": {"type": "string", "format": "uri"},
+        "locator": {"type": "string", "minLength": 1},
+        "review": {"enum": ["unreviewed", "accepted", "rejected"]},
+        "reuse": {"type": "string", "minLength": 1}
+      }
+    },
+    "relation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "source_id", "target_id", "category", "predicate", "origin", "review", "evidence_ids"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "source_id": {"type": "string", "minLength": 1},
+        "target_id": {"type": "string", "minLength": 1},
+        "category": {"enum": ["structural", "scientific", "model_dependency", "association"]},
+        "predicate": {"type": "string", "minLength": 1},
+        "origin": {"enum": ["manual", "extracted", "predicted"]},
+        "review": {"enum": ["unreviewed", "accepted", "rejected"]},
+        "evidence_ids": {"$ref": "#/$defs/ids"}
+      }
+    },
+    "model": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "entity_id", "registry_key", "input_slots", "output_slots", "assumptions", "evidence_ids", "review"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "entity_id": {"type": "string", "minLength": 1},
+        "registry_key": {"type": "string", "minLength": 1},
+        "input_slots": {"$ref": "#/$defs/ids"},
+        "output_slots": {"$ref": "#/$defs/ids"},
+        "assumptions": {"$ref": "#/$defs/ids"},
+        "evidence_ids": {"$ref": "#/$defs/ids"},
+        "review": {"enum": ["unreviewed", "accepted", "rejected"]}
+      }
+    },
+    "application": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "model_id", "configuration_id", "inputs", "outputs", "required_conditions"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "model_id": {"type": "string", "minLength": 1},
+        "configuration_id": {"type": "string", "minLength": 1},
+        "inputs": {"type": "object", "additionalProperties": {"type": "string", "minLength": 1}},
+        "outputs": {"type": "object", "additionalProperties": {"type": "string", "minLength": 1}},
+        "required_conditions": {"$ref": "#/$defs/ids"}
+      }
+    },
+    "quantity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["value", "unit", "origin"],
+      "properties": {
+        "value": {"type": "number"},
+        "unit": {"type": "string", "minLength": 1},
+        "origin": {"enum": ["user", "evidence", "synthetic"]}
+      }
+    },
+    "scenario": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "configuration_id", "direction", "values", "conditions", "expected_state"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "configuration_id": {"type": "string", "minLength": 1},
+        "direction": {"enum": ["forward", "backward"]},
+        "values": {"type": "object", "additionalProperties": {"$ref": "#/$defs/quantity"}},
+        "conditions": {"type": "object", "additionalProperties": {"type": ["boolean", "null"]}},
+        "expected_state": {"enum": ["conditional_supported", "qualitative_only", "unresolved", "blocked", "infeasible_within_search"]},
+        "target": {"type": "object", "additionalProperties": false, "required": ["parameter_id", "operator", "value", "unit"], "properties": {
+          "parameter_id": {"type": "string", "minLength": 1}, "operator": {"enum": ["<=", ">=", "=="]}, "value": {"type": "number"}, "unit": {"type": "string", "minLength": 1}
+        }}
+      },
+      "allOf": [{"if": {"properties": {"direction": {"const": "backward"}}}, "then": {"required": ["target"]}}]
+    }
+  }
+}

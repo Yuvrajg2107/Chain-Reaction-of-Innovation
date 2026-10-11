@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<rect width="1600" height="1000" fill="#f5f8fa"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#116c71"/></marker></defs>
+<text x="55" y="88" font-family="Arial,sans-serif" font-size="48" font-weight="bold" fill="#143449">Forward and backward engineering analysis</text>
+<text x="55" y="137" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Both directions use the same reviewed models, configuration, evidence, and constraints.</text>
+<rect x="55" y="180" width="690" height="200" rx="15" fill="#e4eff5" stroke="#bbcad3" stroke-width="2"/>
+<text x="77" y="228" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">Forward: specify a change</text>
+<text x="77" y="280" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Parameter, product configuration, context</text>
+<text x="77" y="320" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Find applicable mechanisms and model bindings</text>
+<rect x="855" y="180" width="690" height="200" rx="15" fill="#e3f1ec" stroke="#bbcad3" stroke-width="2"/>
+<text x="877" y="228" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">Backward: specify a requirement</text>
+<text x="877" y="280" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Target, allowed interventions, hard constraints</text>
+<text x="877" y="320" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Find upstream controllable variables</text>
+<rect x="55" y="445" width="690" height="185" rx="15" fill="#e9edf9" stroke="#bbcad3" stroke-width="2"/>
+<text x="77" y="493" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">Check before execution</text>
+<text x="77" y="545" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Inputs / units / assumptions / validity ranges</text>
+<text x="77" y="585" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Unknown conditions create explicit blockers</text>
+<rect x="855" y="445" width="690" height="185" rx="15" fill="#e9edf9" stroke="#bbcad3" stroke-width="2"/>
+<text x="877" y="493" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">Generate bounded candidates</text>
+<text x="877" y="545" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Approved inverse model or bounded search</text>
+<text x="877" y="585" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Forward-check each candidate and constraint</text>
+<rect x="55" y="695" width="690" height="165" rx="15" fill="#def1f0" stroke="#bbcad3" stroke-width="2"/>
+<text x="77" y="743" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">Report conditional impacts</text>
+<text x="77" y="795" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Beneficial, adverse, mixed, or unresolved</text>
+<text x="77" y="835" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Show intermediate outputs and evidence</text>
+<rect x="855" y="695" width="690" height="165" rx="15" fill="#fbefda" stroke="#bbcad3" stroke-width="2"/>
+<text x="877" y="743" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">Report investigated options</text>
+<text x="877" y="795" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Feasible within conditions, blocked, or unresolved</text>
+<text x="877" y="835" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">No automatic novelty or invention certification</text>
+<line x1="400" y1="380" x2="400" y2="445" stroke="#116c71" stroke-width="5" marker-end="url(#arrow)"/>
+<line x1="400" y1="630" x2="400" y2="695" stroke="#116c71" stroke-width="5" marker-end="url(#arrow)"/>
+<line x1="1200" y1="380" x2="1200" y2="445" stroke="#116c71" stroke-width="5" marker-end="url(#arrow)"/>
+<line x1="1200" y1="630" x2="1200" y2="695" stroke="#116c71" stroke-width="5" marker-end="url(#arrow)"/>
+<text x="55" y="924" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#143449">A reverse graph traversal finds relevance. It does not prove that an intervention works.</text>
+<text x="55" y="959" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#143449">New planning diagram based on source text; it does not recover the cropped source image.</text>
+</svg>

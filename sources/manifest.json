@@ -1,0 +1,25 @@
+{
+  "source_name": "edi_ff180_final.pdf",
+  "pages": 16,
+  "sha256": "41f403399fe5261eb8c994a51970962204d0a98c5c3aac332a7ff028f21f61a4",
+  "review_date": "2026-10-12",
+  "original_storage": "local-only; excluded from Git due to personal contact data",
+  "tracked_excerpt_pages": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "technical_figures": [
+    8,
+    9
+  ],
+  "figure_9_limit": "source image cropped on right and bottom",
+  "source_rendering": "Poppler compressed-stream warnings; page review completed",
+  "publication_rights": "not established for public redistribution"
+}

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<rect width="1600" height="1000" fill="#f5f8fa"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#116c71"/></marker></defs>
+<text x="55" y="88" font-family="Arial,sans-serif" font-size="48" font-weight="bold" fill="#143449">ChainReaction | proposed system</text>
+<text x="55" y="137" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">A shared engine, reviewed domain packs, and conditional engineering outputs.</text>
+<rect x="55" y="185" width="450" height="220" rx="15" fill="#e4eff5" stroke="#bbcad3" stroke-width="2"/>
+<text x="77" y="233" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">1. Evidence and review</text>
+<text x="77" y="285" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Permitted sources and exact locators</text>
+<text x="77" y="325" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Draft claims -&gt; human review</text>
+<text x="77" y="365" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Source versions and conflicts</text>
+<rect x="575" y="185" width="470" height="280" rx="15" fill="#e3f1ec" stroke="#bbcad3" stroke-width="2"/>
+<text x="597" y="233" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">2. Domain pack</text>
+<text x="597" y="285" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Product / subsystem / component</text>
+<text x="597" y="325" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Material / principle / model</text>
+<text x="597" y="365" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Parameters, units, configurations</text>
+<text x="597" y="405" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Model bindings and conditions</text>
+<rect x="1115" y="185" width="430" height="280" rx="15" fill="#e9edf9" stroke="#bbcad3" stroke-width="2"/>
+<text x="1137" y="233" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">3. Shared engine</text>
+<text x="1137" y="285" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Plan relevant mechanisms</text>
+<text x="1137" y="325" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Check context and inputs</text>
+<text x="1137" y="365" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Execute approved models</text>
+<text x="1137" y="405" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Recheck inverse candidates</text>
+<rect x="55" y="570" width="450" height="230" rx="15" fill="#e9edf0" stroke="#bbcad3" stroke-width="2"/>
+<text x="77" y="618" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">Versioned local records</text>
+<text x="77" y="670" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">SQLite + graph view</text>
+<text x="77" y="710" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Evidence files and permissions</text>
+<text x="77" y="750" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Immutable run snapshots</text>
+<rect x="575" y="570" width="470" height="260" rx="15" fill="#fbefda" stroke="#bbcad3" stroke-width="2"/>
+<text x="597" y="618" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">5. Evaluate</text>
+<text x="597" y="670" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Matched baselines and ablations</text>
+<text x="597" y="710" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Correct paths and false support</text>
+<text x="597" y="750" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Answer coverage and transfer effort</text>
+<text x="597" y="790" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Expert review of failures</text>
+<rect x="1115" y="570" width="430" height="260" rx="15" fill="#def1f0" stroke="#bbcad3" stroke-width="2"/>
+<text x="1137" y="618" font-family="Arial,sans-serif" font-size="30" font-weight="bold" fill="#143449">4. Inspectable results</text>
+<text x="1137" y="670" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Conditional supported impacts</text>
+<text x="1137" y="710" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Blocked or unresolved branches</text>
+<text x="1137" y="750" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Evidence and model versions</text>
+<text x="1137" y="790" font-family="Arial,sans-serif" font-size="27" font-weight="normal" fill="#143449">Next evidence needed</text>
+<line x1="505" y1="300" x2="575" y2="300" stroke="#116c71" stroke-width="5" marker-end="url(#arrow)"/>
+<line x1="1045" y1="320" x2="1115" y2="320" stroke="#116c71" stroke-width="5" marker-end="url(#arrow)"/>
+<line x1="1330" y1="465" x2="1330" y2="570" stroke="#116c71" stroke-width="5" marker-end="url(#arrow)"/>
+<line x1="1115" y1="700" x2="1045" y2="700" stroke="#116c71" stroke-width="5" marker-end="url(#arrow)"/>
+<line x1="280" y1="405" x2="280" y2="570" stroke="#116c71" stroke-width="5" marker-end="url(#arrow)"/>
+<text x="55" y="924" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#143449">Planning diagram, 12 October 2026. Components are not implemented.</text>
+<text x="55" y="959" font-family="Arial,sans-serif" font-size="24" font-weight="normal" fill="#143449">The six entity types organize knowledge; they do not impose a linear physical hierarchy.</text>
+</svg>
